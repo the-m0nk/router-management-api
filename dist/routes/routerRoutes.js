@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routerRoutes = void 0;
+const express_1 = require("express");
+const RouterController_1 = require("../controllers/RouterController");
+const RouterServices_1 = require("../services/RouterServices");
+const router = (0, express_1.Router)();
+exports.routerRoutes = router;
+const routerService = new RouterServices_1.RouterService();
+const routerController = new RouterController_1.RouterController(routerService);
+router.get('/status', routerController.getRouterStatus.bind(routerController));
+router.post('/settings/wifi/enable', routerController.enableWifi.bind(routerController));
+router.post('/settings/wifi/disable', routerController.disableWifi.bind(routerController));
+router.post('/settings/firewall/enable', routerController.enableFirewall.bind(routerController));
+router.post('/settings/firewall/disable', routerController.disableFirewall.bind(routerController));
+router.post('/settings/password/change', routerController.changePassword.bind(routerController));

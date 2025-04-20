@@ -1,0 +1,149 @@
+{
+	"info": {
+		"_postman_id": "33e50345-f9b0-4ca8-b5c3-ef59a1dc3f0f",
+		"name": "payatu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19187653"
+	},
+	"item": [
+		{
+			"name": "Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/router/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"router",
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable WiFi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/router/settings/wifi/enable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"router",
+						"settings",
+						"wifi",
+						"enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable WiFi",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/router/settings/wifi/disable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"router",
+						"settings",
+						"wifi",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Enable Firewall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/router/settings/firewall/enable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"router",
+						"settings",
+						"firewall",
+						"enable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Disable Firewall",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/router/settings/firewall/disable",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"router",
+						"settings",
+						"firewall",
+						"disable"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Change Password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"newPassword\": \"newSecurePass123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/router/settings/password/change",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"router",
+						"settings",
+						"password",
+						"change"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

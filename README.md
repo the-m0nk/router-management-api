@@ -2,6 +2,8 @@
 
 **Architecture:** The API follows a layered architecture with controllers (handling HTTP requests), services (business logic), and repositories (data access). The IRouterRepository interface ensures extensibility for real router integration.
 
+__Note__: The get status API give the details of the connected PC, Enable and disable API enable and disable the connected PC(I used command used for that in the API).
+
 ## SOLID Principles:
 
 - **Single Responsibility:** Each class (e.g., RouterController, RouterService) has a single purpose.
@@ -36,11 +38,22 @@ __GET__ http://localhost:3000/router/status
 __Response__
 json
 {
-    "model": "RouterModel123",
-    "firmwareVersion": "1.0.0",
-    "macAddress": "AA:BB:CC:DD:EE:FF",
-    "serialNumber": "SN123456789",
-    "uptime": "48 hours"
+    "model": "connected",
+    "firmwareVersion": "N/A",
+    "macAddress": "AirFiber-55",
+    "serialNumber": "AirFiber-55",
+    "uptime": "0 hours",
+    "ssid": "connected",
+    "mode": "d6:3d:60:a6:40:10",
+    "channel": null,
+    "frequency": null,
+    "signal_level": 500.5,
+    "quality": 1201,
+    "security": "157",
+    "security_flags": "Infrastructure",
+    "iface": "Wi-Fi",
+    "bssid": "AirFiber-55",
+    "mac": "AirFiber-55"
 }
 
 __POST__ http://localhost:3000/router/settings/wifi/enable

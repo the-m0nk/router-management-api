@@ -71,23 +71,10 @@ class RouterController {
             }
         });
     }
-    // async changePassword(req: Request, res: Response, next: NextFunction): Promise<void> {
-    //   try {
-    //     const passwordChangeDTO = await validateDTO(PasswordChangeDTO, req.body);
-    //     const result = await this.routerService.changePassword(passwordChangeDTO);
-    //     res.json(result);
-    //   } catch (error) {
-    //     next(error);
-    //   }
-    // }
     changePassword(req, res, next) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const passwordChangeDTO = yield (0, validateDTO_1.validateDTO)(PasswordChangedDTO_1.PasswordChangeDTO, req.body);
-                if (passwordChangeDTO.newPassword.length < 8) {
-                    res.status(400).json({ message: 'Password must be at least 8 characters long' });
-                    return;
-                }
                 const result = yield this.routerService.changePassword(passwordChangeDTO);
                 res.json(result);
             }
